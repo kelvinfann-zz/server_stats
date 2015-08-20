@@ -1,0 +1,28 @@
+<html>
+    <table border="1" cellpadding="10", cellspacing="0" class="tab">
+        <tr>
+            {% for source in sources %}
+                <th>{{ source }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in counts %}
+            <tr class="{{ row.matched }}">
+                {% for count in row.data %}
+                    <td>{{ count }}</td>
+                {% endfor %}
+            <tr>
+        {% endfor %}
+    </table>
+
+</html>
+<script type="text/javascript">
+  setTimeout(function(){
+    location = ''
+  },5*1000)
+</script>
+
+<style type="text/css">
+    .unsynced {
+        color: red;
+    }
+</style>
